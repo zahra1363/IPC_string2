@@ -8,6 +8,7 @@ int main(int argc, char **argv)
 {
     char * myfifo = (char*)"/home/solmaz/Documents/intership c++ code/myfifo"; // Change to your desired pipe name
     const char* text_file = (char*)"/home/solmaz/Documents/intership c++ code/text_file.txt"; 
+    
     // Open the named pipe for reading
     int read_fd = open(myfifo, O_RDONLY);
 
@@ -15,6 +16,7 @@ int main(int argc, char **argv)
     char buffer[1024];
     read(read_fd, buffer, sizeof(buffer));
     std::cout << "Received message: " << buffer << std::endl;
+    std::cout << "message is writting in the text file ..." << std::endl;
 
  // Open the file for writing
     std::ofstream outfile;
